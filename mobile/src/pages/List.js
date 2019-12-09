@@ -18,7 +18,7 @@ export default function List() {
 
 
   return (
-    <SafeAreaView style={StyleSheet.container}>
+    <SafeAreaView style={styles.container}>
 
       <Image styles = {styles.logo} source = {logo} />
 
