@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, AsyncStorage, KeyboardAvoidingView, Platform, Image, Text, TextInput, StyleSheet } from 'react-native';
+import { View, AsyncStorage, TouchableOpacity, KeyboardAvoidingView, Platform, Image, Text, TextInput, StyleSheet } from 'react-native';
 
 import api from '../services/api'
 
@@ -30,7 +30,7 @@ export default function Login({ navigation }) {
     navigation.navigate('List');
   };
 
-  return <KeyboardAvoidingView enabled = {Platform.OS === 'ios'} behavior = 'padding' style = {styles.container}>
+  return <KeyboardAvoidingView enabled = {true} behavior = 'padding' style = {styles.container}>
     <Image source = {logo} />
 
     <View style = {styles.form}>

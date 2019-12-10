@@ -35,7 +35,7 @@ export default function SpotList({ tech }) {
           <Text style = {styles.company}>{item.company}</Text>
           <Text style = {styles.price}>{item.price ? `R$${item.price}/dia` : `GRATUITO`}</Text>
           <TouchableOpacity onPress = {() => {}} style = {styles.button}>
-            <Text style={styles.buttonText}>Solicitar reserva</Text>
+            <Text style = {styles.buttonText}>Solicitar reserva</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -58,9 +58,10 @@ const styles = StyleSheet.create({
 
   bold: {
     fontWeight: 'bold'
-
   },
 
-  list: {}
+  list: {
+    paddingHorizontal: 10
+  }
 
 })
