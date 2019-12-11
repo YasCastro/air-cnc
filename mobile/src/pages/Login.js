@@ -30,7 +30,7 @@ export default function Login({ navigation }) {
     navigation.navigate('List');
   };
 
-  return <KeyboardAvoidingView enabled = {true} behavior = 'padding' style = {styles.container}>
+  return (<KeyboardAvoidingView enabled = {true} behavior = 'padding' style = {styles.container}>
     <Image source = {logo} />
 
     <View style = {styles.form}>
@@ -60,6 +60,7 @@ export default function Login({ navigation }) {
       </TouchableOpacity>
     </View>
   </KeyboardAvoidingView>
+  );
 }
 
 const styles = StyleSheet.create({
