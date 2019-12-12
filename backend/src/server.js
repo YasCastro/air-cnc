@@ -12,7 +12,10 @@ const server = http.Server(app);
 const io = socketio(server);
 
 io.on('connection', socket => {
-    console.log(socket.handshake.query);   
+    //console.log(socket.handshake.query);   
+    console.log('Usuário conectado', socket.id);
+
+    socket.emit('message', 'To you')
 });
 
 mongoose.connect('mongodb+srv://omnistack:omnistack@omnistack-b87wf.mongodb.net/semana09?retryWrites=true&w=majority',{

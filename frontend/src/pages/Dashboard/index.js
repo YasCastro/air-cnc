@@ -11,8 +11,11 @@ export default function Dashboard() {
 
   useEffect(() =>{
     const user_id =localStorage.getItem('user');
-    const socket = socketio('http://localhost:3333', {
-      query: { user_id },
+    const socket = socketio('http://localhost:3333');
+
+    socket.on('hello', data => {
+      console.log(data);
+      console.log(user_id);
     });
     
   }, []);
