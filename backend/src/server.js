@@ -2,10 +2,18 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
+const socketio = require('socket.io');
+const http = require('http')
 
 const routes = require('./routes');
 
 const app = express();
+const server = http.Server(app);
+const io = socketio(server);
+
+io.on('connection', socket => {
+    console.log(socket.handshake.query);   
+});
 
 mongoose.connect('mongodb+srv://omnistack:omnistack@omnistack-b87wf.mongodb.net/semana09?retryWrites=true&w=majority',{
     useNewUrlParser: true,
