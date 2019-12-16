@@ -24,6 +24,5 @@ routes.post('/spots/:spot_id/bookings', BookingController.store);
 routes.post('/bookings/:booking_id/approvals', ApprovalController.store);
 routes.post('/bookings/:booking_id/rejections', RejectionController.store);
 
-routes.post();
 
 module.exports = routes;
