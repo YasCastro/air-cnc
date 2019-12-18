@@ -11,10 +11,10 @@ export default function Login({ navigation }) {
 
   useEffect(() => {
     AsyncStorage.getItem('user').then( user => {
-      if (user) {
+      if (user && back === false) {
         navigation.navigate('List');
       }
-    })
+    });
   }, []);
 
   async function handleSubmit() {
@@ -23,6 +23,7 @@ export default function Login({ navigation }) {
     })
 
     const { _id } = response.data;
+    back = false;
 
     await AsyncStorage.setItem('user', _id);
     await AsyncStorage.setItem('techs', techs);
